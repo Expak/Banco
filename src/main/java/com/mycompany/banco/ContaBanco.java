@@ -72,18 +72,22 @@ public class ContaBanco {
 
     
     public String abrirConta(String t){
-        if (this.getStatus() == false){
-           this.setStatus(true);
-           this.setTipo(t);
-            if (t=="CC") {
-                this.setSaldo(50);
-            } else if (t=="CP"){
-                this.setSaldo(150);
-            }
-           return "Conta foi aberta com sucesso";
-        }else 
-            return "Conta já está aberta";
-    }
+if (this.getStatus() == false) {
+    if (t=="CC"||t=="CP"){
+        this.setStatus(true);
+        this.setTipo(t);
+         if (this.getTipo()=="CC") {
+             this.setSaldo(50);
+             return "Conta Corrente aberta";
+         } else if (this.getTipo()=="CP"){
+             this.setSaldo(150);
+             return "Conta Poupança aberta";
+     }
+ }    else
+ return "Tipo de conta invalida";
+}return "Conta já está aberta";
+}
+
     public String fechaConta(){
         if (this.getStatus() == true && this.saldo > 0){
             return "Conta não pode ser fechada, porque tem saldo";
