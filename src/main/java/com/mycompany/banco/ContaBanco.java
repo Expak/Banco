@@ -67,12 +67,9 @@ public class ContaBanco {
         return this.status;
     }
     
-    
-    
-    
-    
-    
-    
+
+
+
     
     public String abrirConta(String t){
         if (this.getStatus() == false){

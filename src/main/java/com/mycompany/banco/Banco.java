@@ -20,8 +20,6 @@ public class Banco {
         System.out.println(c1.sacar(10000));
         System.out.println(c1.getSaldo());
         c1.estadoAtual();
-        
-                
-                
-                }
+            
+    }
 }
