@@ -11,17 +11,17 @@ package com.mycompany.banco;
 public class Banco {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Bem-vindo ao Banco!");
         ContaBanco c1 = new ContaBanco() ;
-        
+
+       c1.setStatus(true);
         c1.estadoAtual();
-        c1.abrirConta("CP");
-        c1.depositar(1000);
-        System.out.println(c1.sacar(10000));
-        System.out.println(c1.getSaldo());
+     
+        System.out.println(c1.abrirConta("CC")); 
+      //  c1.depositar(1000);
+        //System.out.println(c1.sacar(10000));
+        //System.out.println(c1.getSaldo());
         c1.estadoAtual();
-        
-                
-                
-                }
+            
+    }
 }
