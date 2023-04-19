@@ -14,14 +14,15 @@ public class Banco {
         System.out.println("Bem-vindo ao Banco!");
         ContaBanco c1 = new ContaBanco() ;
 
-       //c1.setStatus(true);
+       
         c1.estadoAtual();
      
-        System.out.println(c1.abrirConta("C")); 
-      //  c1.depositar(1000);
-        //System.out.println(c1.sacar(10000));
-        //System.out.println(c1.getSaldo());
+        c1.abrirConta("CP"); 
+        //c1.depositar(1000);
+        //c1.sacar(10000);
+        //c1.getSaldo();
+        //c1.pagarMensalidade();
         c1.estadoAtual();
-            
+    
     }
 }

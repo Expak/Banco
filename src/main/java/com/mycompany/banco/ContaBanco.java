@@ -45,14 +45,12 @@ public class ContaBanco {
         return this.dono;
     }
     
-    public String setSaldo(float saldo){
+    public void setSaldo(float saldo){
         if (saldo>0) {
             this.saldo=saldo;
         } else {
-            return "Valor negativo não pode ser depositado";
+            System.out.println("Valor negativo não pode ser depositado");
         }
-        return null;
-
     }
     
     public float getSaldo(){
@@ -71,66 +69,66 @@ public class ContaBanco {
 
 
     
-    public String abrirConta(String t){
+    public void abrirConta(String t){
 if (this.getStatus() == false) {
     if (t=="CC"||t=="CP"){
         this.setStatus(true);
         this.setTipo(t);
          if (this.getTipo()=="CC") {
              this.setSaldo(50);
-             return "Conta Corrente aberta";
+             System.out.println("Conta Corrente aberta");
          } else if (this.getTipo()=="CP"){
              this.setSaldo(150);
-             return "Conta Poupança aberta";
+             System.out.println("Conta Poupança aberta");
      }
- }  
- return "Tipo de conta invalida";
-}return "Conta já está aberta";
+ }  System.out.println("Tipo de conta invalida");
+}   System.out.println("Conta já está aberta");
 }
 
-    public String fechaConta(){
+    public void fechaConta(){
         if (this.getStatus() == true && this.saldo > 0){
-            return "Conta não pode ser fechada, porque tem saldo";
+            System.out.println("Conta não pode ser fechada, porque tem saldo");
         }else if (this.getStatus() == true && this.saldo<0){
-            return "Conta não pode ser fechada, porque está com divida";
+            System.out.println("Conta não pode ser fechada, porque está com divida");
         }else if (this.getStatus() == false){
-            return "Conta já está fechada";
+            System.out.println("Conta já está fechada");
         }else 
             this.setStatus(false);
-        return "Conta fechada com sucesso";
+            System.out.println("Conta fechada com sucesso");
     }
-    public String depositar(float valor){
+
+    public void depositar(float valor){
         if (this.getStatus()){
             this.setSaldo(this.getSaldo()+valor);
-        return "Valor depositado";
+            System.out.println("Valor depositado");
     }else 
-            return "Conta fechada";
+    System.out.println("Conta fechada");
     }
-    public String sacar(float valor){
+
+    public void sacar(float valor){
         if (this.getStatus()){
         if(this.getSaldo()<valor){
-            return "Valor de saque maior que o do saldo";
+            System.out.println("Valor de saque maior que o do saldo");
         }else
             this.setSaldo(this.getSaldo()-valor);
-        return "Valor sacado com sucesso";
+            System.out.println("Valor sacado com sucesso");
     }else
-            return "Conta está fechada";
+    System.out.println("Conta está fechada");
 }
     
     
     
-    public String pagarMensalidade(){
+    public void pagarMensalidade(){
         if (this.getStatus()){
         if (this.getTipo()=="CC"){
             this.setSaldo(this.getSaldo()-12);
-        return "Mensalidade paga";
+            System.out.println("Mensalidade paga");
         }else if (this.getTipo()=="CP"){
             this.setSaldo(this.getSaldo()-20);
-        return "mensalidade paga";
+            System.out.println("Mensalidade paga");
         }
-        return null;
     }else 
-            return "Conta fechada";
+    System.out.println("Conta fechada");
     
 }
     
